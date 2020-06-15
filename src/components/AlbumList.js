@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import {View, Text} from 'react-native';
-import Title from './Title';
+import {ScrollView, Text} from 'react-native';
 import AlbumDetail from './AlbumDetail';
 import albumsApi from '../api/albumsApi';
 
@@ -30,11 +29,11 @@ export default class AlbumList extends Component {
             <AlbumDetail key={album.title} album = {album} />
         )
         return (
-            <View>
+            <ScrollView>
                 {(!isEmpty) ? <Text>Data loading...</Text> :
                     albumsList
                 }
-            </View>
+            </ScrollView>
         )
     }
 }
